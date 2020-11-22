@@ -1,0 +1,24 @@
+{
+  "name": "light-in-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.29.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamgiebl/Light-in-CSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamgiebl/Light-in-CSS/issues"
+  },
+  "homepage": "https://github.com/adamgiebl/Light-in-CSS#readme",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  }
+}
