@@ -6,6 +6,9 @@
 
 body {
   background: black;
+  display: grid;
+  place-items: center;
+  height: 100vh;
 }
 
 .container {
@@ -15,6 +18,7 @@ body {
   float: right;
   position: relative;
   overflow: hidden;
+  perspective: 100px;
   background-color: #ddffaa;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
 }
@@ -38,10 +42,11 @@ body {
   height: 50px;
   left: 50%;
   transform: translateX(-50%);
-  top: 10px;
+  top: 0px;
   border-radius: 20px 20px 3px 3px;
   z-index: 7;
   border: 5px solid black;
+  animation: swing 2s infinite alternate ease-in-out;
 
   &::before {
     content: "";
@@ -60,7 +65,7 @@ body {
   position: absolute;
   background: rgba(255, 255, 255, 0.6);
   width: 150%;
-  height: 100%;
+  height: 120%;
   left: 50%;
   top: 0;
   clip-path: polygon(50% 0, 50% 0, 70% 100%, 30% 100%);
@@ -68,6 +73,8 @@ body {
   mix-blend-mode: overlay;
   transform: translateX(-50%);
   transform-origin: top;
+  //animation: blink 2s infinite alternate ease-in-out;
+  animation: swing 2s infinite alternate ease-in-out;
 }
 
 .chair {
@@ -103,21 +110,26 @@ body {
   left: 0;
 }
 
-.swing {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 50%;
-  z-index: 9;
-  transform-origin: top;
-  animation: swing 2s infinite alternate ease-in-out;
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes swing {
   from {
-    transform: translateX(-50%) rotate(20deg);
+    transform: translateX(-50%) rotate(10deg);
   }
   to {
-    transform: translateX(-50%) rotate(-20deg);
+    transform: translateX(-50%) rotate(-10deg);
   }
 }
